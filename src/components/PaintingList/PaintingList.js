@@ -8,7 +8,8 @@ console.log("PaintingList.js works!");
 //карточками от файла  json. Данніе одной карточки пропускаються циклом map через шаблон и получаем коллекцию карточек
 function PaintingList({ items }) {
     return (
-        <ul className={PaintingListStl.PaintingListStyle}>
+        // <ul className={PaintingListStl.PaintingListStyle}>
+     <ul className={PaintingListStl.PaintingListStyle}>
      {/* <ul> */}
             {items.map(item => (
                 <li key={item.id}>
