@@ -27,8 +27,7 @@
 ////////////////// ===================== React . Занятие 2  =========================
 
 import paintings from './paintings.json'; // импортируем json-файл с данными (для примера динаммического изменения данных)
-import Painting from './components/Painting'
-import PaintingList from './components/PaintingList'
+import PaintingList from './components/PaintingList/PaintingList'
 
 
  function App() {

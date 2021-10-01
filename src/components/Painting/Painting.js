@@ -1,21 +1,24 @@
-import PropTypes from 'prop-types';
 
+//  import defaultImage from './defaultImg.jpg';
+import  StylePainting  from './Painting.module.css';
+import PropTypes from 'prop-types';
 
 //  Это пример react-компонента. По факту это функция, котрая возвращает нам разметку (родительский тег)
 //  Не забывать везде закрывать теги (даже одинарные). Имена  react-компонентов ОБЯЗАТЕЛЬНО писать с БОЛЬШОЙ буквы. 
 //  Иначе  jsx  не воспримеет её как переменную, а решит что это просто строка с тегом. Ничего не будет рендерится.
 function Painting(props) {
-    const {  imageUrl,
+    const {
+        // imageUrl = defaultImage, //так прописывается путь к дефолтной картинке
+        url,
         title,
-        authorUrl,
-        authorName = 'не известно',
+        author = 'не известно',
         price,
         quantity} = props;
-    return (<div>
-        <img src={ imageUrl} alt={title} width="480" />
+    return (<div className={StylePainting.Painting}>
+        <img src={ url} alt={title} width="480" />
         <h2>{title}</h2>
         <p>
-            Автор: <a href={authorUrl}>{authorName}</a>
+            Автор: <a href={author.url}>{author.tag}</a>
         </p>
         <p>Цена: {price}  кредитов</p>   
         {/* Пример рендеринга по условию */}
@@ -29,9 +32,9 @@ function Painting(props) {
 // если вместо цифры, например, в цене передать не число, а строку, то в консоле будет предупреждение об ошибке
 Painting.propTypes = {
     imageUrl: PropTypes.string,
+    url: PropTypes.string,
     title: PropTypes.string,
-    authorUrl: PropTypes.string,
-    authorName: PropTypes.string,
+    author: PropTypes.string,
     price: PropTypes.number,
     quantity:PropTypes.number
 }

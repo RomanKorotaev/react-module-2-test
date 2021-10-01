@@ -1,18 +1,21 @@
-import Painting from './Painting'
+import Painting from '../Painting/Painting'
 import PropTypes from 'prop-types';
+import PaintingListStl from './PaintingList.module.css'
 
+
+console.log("PaintingList.js works!");
 // это аналог шаблона разметки для одной карточки. Аргументом получает массив с 
 //карточками от файла  json. Данніе одной карточки пропускаються циклом map через шаблон и получаем коллекцию карточек
 function PaintingList({ items }) {
     return (
-        <ul>
+        <ul className={PaintingListStl.PaintingListStyle}>
+     {/* <ul> */}
             {items.map(item => (
                 <li key={item.id}>
-                    <Painting
-                        imageUrl={item.url}
+                     <Painting
+                        url={item.url}
                         title={item.title}
-                        authorName={item.author.tag}
-                        authorUrl={item.author.url}
+                        author={item.author}
                         price={item.price}
                         quantity={item.quantity}
                     />
