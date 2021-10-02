@@ -1,5 +1,5 @@
 
-//  import defaultImage from './defaultImg.jpg';
+import defaultImage from './defaultImg.jpg';
 import  StylePainting  from './Painting.module.css';
 import PropTypes from 'prop-types';
 
@@ -8,19 +8,21 @@ import PropTypes from 'prop-types';
 //  Иначе  jsx  не воспримеет её как переменную, а решит что это просто строка с тегом. Ничего не будет рендерится.
 function Painting(props) {
     const {
-        // imageUrl = defaultImage, //так прописывается путь к дефолтной картинке
+        imageUrl = defaultImage, //так прописывается путь к дефолтной картинке
         url,
         title,
         author = 'не известно',
         price,
         quantity} = props;
     return (<div className={StylePainting.Painting}>
-        <img src={ url} alt={title} width="480" />
+        <b className={StylePainting.PaintingTestStyleVariable}> Component: Painting.js (Тестируем применение</b>
+        <b className={StylePainting.PaintingTestStyleVariable}>переменной css в подульных  css-файлах) </b>
+        <img src={imageUrl} alt={title} width="480" />
         <h2>{title}</h2>
         <p>
             Автор: <a href={author.url}>{author.tag}</a>
         </p>
-        <p>Цена: {price}  кредитов</p>   
+        <p className="TitleBorder">Цена: {price}  кредитов</p>   
         {/* Пример рендеринга по условию */}
          <p>Доступность:  { quantity < 10 ? 'заканчивается' : 'есть в наличии' } </p>
         <button type="button">Добавить в корзину</button>

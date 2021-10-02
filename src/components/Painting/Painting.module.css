@@ -1,4 +1,31 @@
+/* Пример переменной */
+@value mainFs from '../../styles/variables.module.css';
+@value mainFw from '../../styles/variables.module.css';
+@value mainFst from '../../styles/variables.module.css';
+@value greenColor from '../../styles/variables.module.css';
+
 .Painting {
   background-color: cornflowerblue;
   margin-top: 20px;
+}
+
+.PaintingTestStyleVariable {
+  color: greenColor;
+
+  font-size: mainFs;
+  font-weight: mainFw;
+  font-family: mainFst;
+
+  display: block;
+  margin-bottom: 20px;
+  /* margin-top: 50px;*/
+}
+
+/* :global(.TitleBorder) {
+  border: 3px solid rebeccapurple;
+} */
+
+:global(.TitleBorder) {
+  border: 3px solid rebeccapurple;
+  display: block;
 }

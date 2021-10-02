@@ -10,7 +10,8 @@ function PaintingList({ items }) {
     return (
         // <ul className={PaintingListStl.PaintingListStyle}>
      <ul className={PaintingListStl.PaintingListStyle}>
-     {/* <ul> */}
+            <p className="TitleBorder">Это тест глобальной переменной css,</p>
+            <p className="TitleBorder"> которая описана аж в далёком модульном Painting.module.css   </p>
             {items.map(item => (
                 <li key={item.id}>
                      <Painting

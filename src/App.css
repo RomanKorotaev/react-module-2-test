@@ -1,3 +1,12 @@
+/* обычнные переменные CSS*/
+:root {
+  --accent_color: rgb(192, 218, 43);
+}
+
+body {
+  background: var(--accent_color);
+}
+
 .App {
   text-align: center;
 }

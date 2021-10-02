@@ -28,7 +28,7 @@
 
 import paintings from './paintings.json'; // импортируем json-файл с данными (для примера динаммического изменения данных)
 import PaintingList from './components/PaintingList/PaintingList'
-
+import './App.css';
 
  function App() {
     return (

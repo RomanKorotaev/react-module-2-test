@@ -1,0 +1,6 @@
+/* Пример переменной css для модульных файлов*/
+@value mainFs: 25px;
+@value mainFw: 900;
+@value mainFst: italic;
+
+@value greenColor: green;
