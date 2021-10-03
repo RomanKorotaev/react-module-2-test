@@ -1,6 +1,6 @@
 
 import defaultImage from './defaultImg.jpg';
-import  StylePainting  from './Painting.module.css';
+import StylePainting  from './Painting.module.css';
 import PropTypes from 'prop-types';
 
 //  Это пример react-компонента. По факту это функция, котрая возвращает нам разметку (родительский тег)
