@@ -17,7 +17,8 @@ function Painting(props) {
     return (<div className={StylePainting.Painting}>
         <b className={StylePainting.PaintingTestStyleVariable}> Component: Painting.js (Тестируем применение</b>
         <b className={StylePainting.PaintingTestStyleVariable}>переменной css в подульных  css-файлах) </b>
-        <img src={imageUrl} alt={title} width="480" />
+        {/* <img src={imageUrl} alt={title} width="480" /> */}
+         <img src={url} alt={title} width="480" />
         <h2>{title}</h2>
         <p>
             Автор: <a href={author.url}>{author.tag}</a>
