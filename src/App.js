@@ -29,6 +29,7 @@
 import paintings from './paintings.json'; // импортируем json-файл с данными (для примера динаммического изменения данных)
 import PaintingList from './components/PaintingList/PaintingList'
 import './App.css';
+import Dropdown from './components/Dropdown/Dropdown'
 
 import EventsAndStates from './components/EventsAndStates/EventsAndStates'
 
@@ -39,7 +40,8 @@ import Counter from './components/Counter/Counter'
         <dev>
             <PaintingList items={paintings} />
             <EventsAndStates />
-            <Counter initialValue={ 10}/>
+            {/* <Counter initialValue={ 10}/> */}
+            <Dropdown />
         </dev>
     );
 }

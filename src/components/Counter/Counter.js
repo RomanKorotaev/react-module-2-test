@@ -2,6 +2,8 @@
 import s  from './Counter.module.css';
 import PropTypes from 'prop-types';
 import React from 'react';
+import Controls  from './Controls';
+import Value  from './Value';
 
 class Counter extends React.Component {
 
@@ -15,6 +17,7 @@ class Counter extends React.Component {
         //
     }
 
+  
         // //олдскульный вариант объявления состояния state:
     // constructor() {
     //     super();
@@ -68,13 +71,20 @@ class Counter extends React.Component {
     render() {
         return (
             <div className={s.Counter}>
-                <span className={s.Counter__value}>{ this.state.value}</span>
+                {/* <span className={s.Counter__value}>{ this.state.value}</span> */}
 
-                <div className={s.Counter__controls}>
+                <Value value={ this.state.value}  />
+
+                <Controls
+                    onIncrement={this.handlIncrement}
+                    onDecrement={this.handlDecrement}
+                />
+
+                {/* <div className={s.Counter__controls}>
                     <button type="button" onClick={this.handlIncrement}>Увеличить на 1</button>
                     <button type="button" onClick={this.handlDecrement }>Уменьшить на 1</button>
 
-                </div>
+                </div> */}
             </div>
         ) }
 }
