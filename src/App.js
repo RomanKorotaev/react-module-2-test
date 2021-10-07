@@ -32,11 +32,14 @@ import './App.css';
 
 import EventsAndStates from './components/EventsAndStates/EventsAndStates'
 
+import Counter from './components/Counter/Counter'
+
  function App() {
     return (
         <dev>
             <PaintingList items={paintings} />
-            <EventsAndStates/>
+            <EventsAndStates />
+            <Counter/>
         </dev>
     );
 }
