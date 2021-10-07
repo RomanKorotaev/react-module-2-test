@@ -30,10 +30,13 @@ import paintings from './paintings.json'; // импортируем json-фай�
 import PaintingList from './components/PaintingList/PaintingList'
 import './App.css';
 
+import EventsAndStates from './components/EventsAndStates/EventsAndStates'
+
  function App() {
     return (
         <dev>
             <PaintingList items={paintings} />
+            <EventsAndStates/>
         </dev>
     );
 }
