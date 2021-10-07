@@ -1,6 +1,6 @@
 .Dropdown {
   position: relative;
-  width: 400px;
+  width: 800px;
   padding: 20px;
   border: 1px solid black;
 }
@@ -14,4 +14,12 @@
   text-align: center;
   background-color: teal;
   color: white;
+}
+
+.tog_true {
+  margin-left: 180px;
+}
+
+.tog_false {
+  margin-right: 180px;
 }

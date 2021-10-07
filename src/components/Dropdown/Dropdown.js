@@ -23,7 +23,8 @@ class Dropdown extends Component {
      }
 
   toggle = (currentState) => { //а в данном примере передаём функции setState не объект, а функцию, т.к. будем ориентироваться на результат предыдущего состояния (промежуточного)
-      this.setState(currentState => ({ visible: !currentState.visible}))
+      this.setState(currentState => ({ visible: !currentState.visible }))
+      console.log('toggle', currentState.target)
     }
  
     
@@ -33,8 +34,10 @@ class Dropdown extends Component {
              <button type="button" className={s.Dropdown__toggle} onClick={this.show}>Показать(метод  show )</button>
             <button type="button" className={s.Dropdown__toggle} onClick={this.hide}>Скрыть (метод hide)</button>
              
-            <button type="button" className={s.Dropdown__toggle} onClick={this.toggle}>Toggle</button>
+            <button type="button" className={s.Dropdown__toggle} onClick={this.toggle}>Toggle: { this.state.visible ? "Скрыть" : "Показать" } </button>
         
+             {/* Пример события по ховеру/движению мышки */}
+            {/* <button type="button"  className={ this.state.visible ? s.tog_true : s.tog_false}  onMouseOver={this.toggle} > Toggle: { this.state.visible ? "Упс! Не получилось! :(" : "Нажми меня! :)" } </button> */}
             { this.state.visible && <div className={s.Dropdown__menu}>Выпадающее меню</div>}
             
       </div>
