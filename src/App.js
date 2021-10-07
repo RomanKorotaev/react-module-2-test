@@ -39,7 +39,7 @@ import Counter from './components/Counter/Counter'
         <dev>
             <PaintingList items={paintings} />
             <EventsAndStates />
-            <Counter/>
+            <Counter initialValue={ 10}/>
         </dev>
     );
 }

@@ -5,7 +5,17 @@ import React from 'react';
 
 class Counter extends React.Component {
 
-    // //олдскульный вариант объявления состояния state:
+
+    //благоданя Babel дефолтные пропсы можем прописывать через static:
+    static defaultProps = {
+        initialValue: 0,
+    }
+
+    static propTypes = {
+        //
+    }
+
+        // //олдскульный вариант объявления состояния state:
     // constructor() {
     //     super();
     //     this.state = {
@@ -15,10 +25,10 @@ class Counter extends React.Component {
     // // Поскольку под капотом стоит Babel, который транспилирует код, то запись может быть проще:
     
     state = {
-          value: 7,
+        //   value: 7,
+        value: this.props.initialValue,
     }
-
-
+ 
 
     handlIncrement = (event) => { // в этой строке привязываем контекст (this) функции  handlIncrement к данному классу (его экземпляру)
         // другой вариант через bind           
