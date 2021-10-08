@@ -38,6 +38,8 @@ import EventsAndStates from './components/EventsAndStates/EventsAndStates'
 
 import Counter from './components/Counter/Counter'
 
+import TodoList from './components/TodoList/TodoList'
+
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
   { label: 'green', color: '#4CAF50' },
@@ -50,11 +52,12 @@ const colorPickerOptions = [
  function App() {
     return (
         <dev>
-            <PaintingList items={paintings} />
-            <EventsAndStates />
-            <ColorPicker options={colorPickerOptions}/>
-            {/* <Counter initialValue={ 10}/> */}
-            <Dropdown />
+            {/* <PaintingList items={paintings} /> */}
+            {/* <EventsAndStates /> */}
+            {/* <ColorPicker options={colorPickerOptions}/> */}
+            <Counter initialValue={ 10}/>
+            {/* <Dropdown /> */}
+            <TodoList />
         </dev>
     );
 }
