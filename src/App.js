@@ -65,17 +65,28 @@ class App extends Component {
 
     render() {
         const { todos } = this.state;
+
+        const completedTotos = todos.reduce(
+    (acc, todo) => (todo.completed ? acc+1 : acc), 0
+        )
+        
+        console.log  ('completedTotos =', completedTotos )
+
         return (
-            <dev>
+            <div>
             <h1> Состояние компонента</h1>
             {/* <PaintingList items={paintings} /> */}
             {/* <EventsAndStates /> */}
             {/* <ColorPicker options={colorPickerOptions}/> */}
             <Counter initialValue={ 10}/>
                 {/* <Dropdown /> */}
-                
+
+                <div>
+                    <p>Общее кол-вло туду: { todos.length}</p>
+                    <p>Кол-во выполненных туду: </p>
+                </div>
                 <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
-        </dev>)}
+        </div>)}
 }
 
  
