@@ -26,19 +26,21 @@
 
 ////////////////// ===================== React . Занятие 2  =========================
 
+
+import React, { Component } from 'react';
+import './App.css';
+
 import paintings from './paintings.json'; // импортируем json-файл с данными (для примера динаммического изменения данных)
 import PaintingList from './components/PaintingList/PaintingList'
-import './App.css';
+
 import Dropdown from './components/Dropdown/Dropdown'
 import ColorPicker from './components/ColorPicker/ColorPicker'
-
-
 import EventsAndStates from './components/EventsAndStates/EventsAndStates'
-
-
 import Counter from './components/Counter/Counter'
+import TodoList from './components/TodoList'
+// import initialTodos from './todos.json'
+import initialTodos from './todos.json'
 
-import TodoList from './components/TodoList/TodoList'
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -49,17 +51,33 @@ const colorPickerOptions = [
   { label: 'indigo', color: '#3F51B5' },
 ];
 
- function App() {
-    return (
-        <dev>
+
+class App extends Component {
+    state = {
+        todos: initialTodos,
+    }
+
+    deleteTodo = todoId => {
+        this.setState(prevState => ({
+            todos: prevState.todos.filter (todo => todo.id !== todoId), 
+         }))
+    }
+
+    render() {
+        const { todos } = this.state;
+        return (
+            <dev>
+            <h1> Состояние компонента</h1>
             {/* <PaintingList items={paintings} /> */}
             {/* <EventsAndStates /> */}
             {/* <ColorPicker options={colorPickerOptions}/> */}
             <Counter initialValue={ 10}/>
-            {/* <Dropdown /> */}
-            <TodoList />
-        </dev>
-    );
+                {/* <Dropdown /> */}
+                
+                <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
+        </dev>)}
 }
+
+ 
 
 export default App;
