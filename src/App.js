@@ -41,6 +41,7 @@ import TodoList from './components/TodoList'
 // import initialTodos from './todos.json'
 import initialTodos from './todos.json'
 
+import MyForm from './components/MyForm'
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -86,6 +87,8 @@ class App extends Component {
                     <p>Кол-во выполненных туду: </p>
                 </div>
                 <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
+
+                <MyForm />
         </div>)}
 }
 
