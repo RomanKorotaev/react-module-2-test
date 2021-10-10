@@ -7,7 +7,7 @@ import AppTest from '../../App'
 class MyForm extends Component {
 
     state = {
-        value: '123',
+        value: '',
         id:'',
         text: '',
         completed: false,
@@ -35,6 +35,17 @@ class MyForm extends Component {
         console.log ("e.currentTarget.value", e.currentTarget.value ) 
     }
 
+    reset= () => {this.setState({
+        value: '',
+        id:'',
+        text: '',
+        completed: false,
+        tag: '',
+        formTmpObj: {}
+    });
+        console.log ("Сработала функция  reset ")
+    }
+
     handleSubmit = e => {
         e.preventDefault();
         console.log ('Сработала отправка формы')
@@ -43,12 +54,16 @@ class MyForm extends Component {
             id: this.state.id, text: this.state.text, completed:this.state.completed, tag: this.state.tag 
             }
 
-//         JSON.stringify(tmpObj);
-//         console.log ("tmpObj ",tmpObj)
+        JSON.stringify(tmpObj);
+        console.log ("tmpObj ", tmpObj)
 
-// //         console.log("initialTodos2 до пуша", initialTodos2)
-// //         initialTodos2.push(tmpObj);
-// //  console.log ("initialTodos2 после пуша",  initialTodos2)
+        console.log("initialTodos2 до пуша", initialTodos2)
+        initialTodos2.push(tmpObj);
+        console.log("initialTodos2 после пуша", initialTodos2);
+       
+
+        
+        this.reset();
 
 //         AppTest.setState(
 //             prevState => ({
