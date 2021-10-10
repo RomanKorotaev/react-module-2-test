@@ -1,8 +1,8 @@
 [
-    { "id": "id-1", "text": "Выучить основы HTML", "completed": true },
-    { "id": "id-2", "text": "Выучить основы CSS", "completed": true },
-    { "id": "id-3", "text": "Выучить основы JavaScript", "completed": true },
-  { "id": "id-4", "text": "Выучить основы React", "completed": false },
-  { "id": "id-5", "text": "Разобраться с React Router", "completed": false },
-  { "id": "id-6", "text": "Пережить Redux", "completed": false }
+    { "id": "id-1", "text": "Выучить основы HTML", "completed": true, "tag": "HTML" },
+    { "id": "id-2", "text": "Выучить основы CSS", "completed": true, "tag": "CSS" },
+    { "id": "id-3", "text": "Выучить основы JavaScript", "completed": true, "tag": "JavaScript" },
+  { "id": "id-4", "text": "Выучить основы React", "completed": false, "tag": "React" },
+  { "id": "id-5", "text": "Разобраться с React Router", "completed": false, "tag": "React Router" },
+  { "id": "id-6", "text": "Пережить Redux", "completed": false, "tag": "Redux" }
 ]

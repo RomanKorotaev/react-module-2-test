@@ -68,11 +68,22 @@ class App extends Component {
          }))
     }
 
+    deleteTodo2 = todoId2 => {
+        this.setState(prevState => ({
+             todos2: prevState.todos2.filter (todo2 => todo2.id !== todoId2), 
+         }))
+        
+    }
+
     render() {
         const { todos } = this.state;
         const { todos2 } = this.state;
 
         const completedTotos = todos.reduce(
+    (acc, todo) => (todo.completed ? acc+1 : acc), 0
+        )
+
+        const completedTotos2 = todos2.reduce(
     (acc, todo) => (todo.completed ? acc+1 : acc), 0
         )
         
@@ -89,14 +100,19 @@ class App extends Component {
 
                 <div>
                     <p>Общее кол-вло туду: { todos.length}</p>
-                    <p>Кол-во выполненных туду: </p>
+                    <p>Кол-во выполненных туду: {completedTotos} </p>
                 </div>
                 <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
 
                 <MyForm />
 
                 <br></br>
-                 <TodoList2 todos2={todos2} />
+                <TodoList2 todos2={todos2} onDeleteTodo2={this.deleteTodo2} />
+                 <div>
+                    <p>Общее кол-вло TodoList2: <b> { todos2.length} </b></p>
+                    <p>Кол-во выполненных TodoList2:<b> { completedTotos2} </b></p>
+                </div>
+
         </div>)}
 }
 
