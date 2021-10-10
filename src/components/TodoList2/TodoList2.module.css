@@ -1,0 +1,28 @@
+.TodoList2 {
+  width: 600px;
+}
+
+.TodoList2__item {
+  width: 470px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+
+  border: 2px solid rgb(27, 146, 4);
+  border-radius: 10px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.TodoList__text2 {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
+.buttonDelete {
+  border-radius: 10px;
+  padding: 5px 20px;
+}

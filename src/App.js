@@ -41,6 +41,9 @@ import TodoList from './components/TodoList'
 // import initialTodos from './todos.json'
 import initialTodos from './todos.json'
 
+import initialTodos2 from './todos2.json'
+import TodoList2 from './components/TodoList2'
+
 import MyForm from './components/MyForm'
 
 const colorPickerOptions = [
@@ -56,6 +59,7 @@ const colorPickerOptions = [
 class App extends Component {
     state = {
         todos: initialTodos,
+        todos2: initialTodos2
     }
 
     deleteTodo = todoId => {
@@ -66,6 +70,7 @@ class App extends Component {
 
     render() {
         const { todos } = this.state;
+        const { todos2 } = this.state;
 
         const completedTotos = todos.reduce(
     (acc, todo) => (todo.completed ? acc+1 : acc), 0
@@ -89,6 +94,9 @@ class App extends Component {
                 <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
 
                 <MyForm />
+
+                <br></br>
+                 <TodoList2 todos2={todos2} />
         </div>)}
 }
 
