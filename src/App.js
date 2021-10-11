@@ -45,6 +45,7 @@ import initialTodos2 from './todos2.json'
 import TodoList2 from './components/TodoList2'
 
 import MyForm from './components/MyForm'
+import shortid from 'shortid'
 
 const colorPickerOptions = [
   { label: 'red', color: '#F44336' },
@@ -71,9 +72,35 @@ class App extends Component {
     deleteTodo2 = todoId2 => {
         this.setState(prevState => ({
              todos2: prevState.todos2.filter (todo2 => todo2.id !== todoId2), 
-         }))
-        
+         })) 
     }
+
+    // addTodo = text => {
+    //     console.log(text);
+
+    //     const todo = {
+    //         id: shortid.generate(),
+    //         text: text,
+    //         completed: false,
+    //     }
+    //     this.setState(prevState => ({
+    //         todos: [todo, ...prevState.todos]
+    //     }))
+    //  }
+
+      addTodo2 = (message, tag, text) => {
+        console.log(message, tag, text);
+
+        const todo = {
+            id: shortid.generate(),
+            text: text,
+            completed: false,
+            tag: tag,
+        }
+        this.setState(prevState => ({
+            todos2: [todo, ...prevState.todos2]
+        }))
+     }
 
     render() {
         const { todos } = this.state;
@@ -97,14 +124,18 @@ class App extends Component {
             {/* <ColorPicker options={colorPickerOptions}/> */}
             <Counter initialValue={ 10}/>
                 {/* <Dropdown /> */}
-
+                <br></br>
+                <br></br>
+                  <p>Компонент MyForm:  </p>
+                {/* <MyForm onSubmit={ this.addTodo} /> */}
+                 <MyForm onSubmit={ this.addTodo2} />
+                <br></br>
+                 <br></br>
                 <div>
                     <p>Общее кол-вло туду: { todos.length}</p>
                     <p>Кол-во выполненных туду: {completedTotos} </p>
                 </div>
                 <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
-
-                <MyForm />
 
                 <br></br>
                 <TodoList2 todos2={todos2} onDeleteTodo2={this.deleteTodo2} />
