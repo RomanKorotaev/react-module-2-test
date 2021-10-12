@@ -12,7 +12,7 @@
 //         <a
 //           className="App-link"
 //           href="https://reactjs.org"
-//           target="_blank"
+//           target="_blank" 
 //           rel="noopener noreferrer"
 //         >
 //           Learn React
@@ -68,7 +68,7 @@ class App extends Component {
             todos: prevState.todos.filter (todo => todo.id !== todoId), 
          }))
     }
-
+ 
     deleteTodo2 = todoId2 => {
         this.setState(prevState => ({
              todos2: prevState.todos2.filter (todo2 => todo2.id !== todoId2), 
