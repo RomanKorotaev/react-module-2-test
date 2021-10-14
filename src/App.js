@@ -114,7 +114,8 @@ class App extends Component {
     (acc, todo) => (todo.completed ? acc+1 : acc), 0
         )
         
-        console.log  ('completedTotos =', completedTotos )
+        console.log  ('1. completedTotos =', completedTotos )
+        console.log  ('2. completedTotos =', completedTotos )
 
         return (
             <div>
