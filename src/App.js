@@ -1,28 +1,4 @@
-// import logo from './logo.svg';
-// import './App.css';
 
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank" 
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
 
 ////////////////// ===================== React . Занятие 2  =========================
 
@@ -104,10 +80,26 @@ class App extends Component {
 
      componentDidMount () {
          console.log ("App  componentDidMount () ");
-     }
 
-     componentDidUpdate () {
+         const todos2  =  localStorage.getItem ("todos2");
+         const parsedTodos2 =  JSON.parse( todos2 );
+         console.log (" parsedTodos2 =  JSON.parse( todos2 ) ",  parsedTodos2);
+
+         if ( todos2!==null )  { 
+             this.setState ({todos2:  parsedTodos2 })
+             console.log ("App  componentDidMount () " + " this.setState ({todos2:  parsedTodos2 }) .   this.state : ", this.state);
+            }
+     } 
+
+     componentDidUpdate (prevState) {
         console.log ("App  componentDidUpdate () ");
+
+        if (this.state.todos2!==prevState.todos2) {
+            console.log ("App  componentDidUpdate () -Были изменения по стейту ");
+
+            localStorage.setItem ("todos2", JSON.stringify (this.state.todos2))
+
+        }
      }
 
     render() {
