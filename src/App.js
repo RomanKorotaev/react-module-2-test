@@ -122,31 +122,31 @@ class App extends Component {
 
         return (
             <div>
-            <h1> Состояние компонента</h1>
-            {/* <PaintingList items={paintings} /> */}
-            {/* <EventsAndStates /> */}
-            {/* <ColorPicker options={colorPickerOptions}/> */}
-            <Counter initialValue={ 10}/>
-                {/* <Dropdown /> */}
-                <br></br>
-                <br></br>
-                  <p>Компонент MyForm:  </p>
-                {/* <MyForm onSubmit={ this.addTodo} /> */}
-                 <MyForm onSubmit={ this.addTodo2} />
-                <br></br>
-                 <br></br>
-                <div>
-                    <p>Общее кол-вло туду: { todos.length}</p>
-                    <p>Кол-во выполненных туду: {completedTotos} </p>
-                </div>
-                <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
+                <h1> Состояние компонента</h1>
+                {/* <PaintingList items={paintings} /> */}
+                {/* <EventsAndStates /> */}
+                {/* <ColorPicker options={colorPickerOptions}/> */}
+                {/* <Counter initialValue={ 10}/>
+                    {/* <Dropdown /> */}
+                    <br></br>
+                    <br></br>
+                    <p>Компонент MyForm:  </p>
+                    {/* <MyForm onSubmit={ this.addTodo} /> */}
+                    {/* <MyForm onSubmit={ this.addTodo2} /> */}
+                    <br></br>
+                    <br></br>
+                    <div>
+                        <p>Общее кол-вло туду: { todos.length}</p>
+                        <p>Кол-во выполненных туду: {completedTotos} </p>
+                    </div>
+                    <TodoList todos={todos} onDeleteTodo={ this.deleteTodo}/>
 
-                <br></br>
-                <TodoList2 todos2={todos2} onDeleteTodo2={this.deleteTodo2} />
-                 <div>
-                    <p>Общее кол-вло TodoList2: <b> { todos2.length} </b></p>
-                    <p>Кол-во выполненных TodoList2:<b> { completedTotos2} </b></p>
-                </div>
+                    <br></br>
+                    <TodoList2 todos2={todos2} onDeleteTodo2={this.deleteTodo2} />
+                    <div>
+                        <p>Общее кол-вло TodoList2: <b> { todos2.length} </b></p>
+                        <p>Кол-во выполненных TodoList2:<b> { completedTotos2} </b></p>
+                    </div>
 
         </div>)}
 }
