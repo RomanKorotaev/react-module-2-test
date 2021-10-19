@@ -102,7 +102,18 @@ class App extends Component {
         }))
      }
 
+     componentDidMount () {
+         console.log ("App  componentDidMount () ");
+     }
+
+     componentDidUpdate () {
+        console.log ("App  componentDidUpdate () ");
+     }
+
     render() {
+
+        console.log ("App  render() ");
+
         const { todos } = this.state;
         const { todos2 } = this.state;
 
